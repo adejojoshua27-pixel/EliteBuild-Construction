@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="assesst/logo 1.png">
+    <title>EliteBuild | Our Projects</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #f59e0b;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(
+                rgba(17, 24, 39, 0.8),
+                rgba(17, 24, 39, 0.8)
+            ),
+            url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+        }
+
+        /* Projects */
+        .projects {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .project-content p {
+            color: #666;
+        }
+
+        .project-type {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            background-color: #f59e0b;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* CTA */
+        .cta {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 60px 8%;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #f59e0b;
+            color: white;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            background-color: #d97706;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1120;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 35px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+
+        <div class="logo">
+            <img src="assesst/logo 1.png" alt="EliteBuild Logo">
+            Elite<span>Build</span>
+        </div>
+
+        <nav>
+            <ul>
+                <!-- Links to the other pages -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+
+                <!-- Current page -->
+                <li><a href="project.html" class="active">Projects</a></li>
+
+                <!-- Pages we will create next -->
+                <li><a href="team.html">Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Our Projects</h1>
+            <p>Take a look at some of the projects we have completed.</p>
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+    <section class="projects">
+
+        <div class="section-title">
+            <h2>Our Completed Projects</h2>
+            <p>
+                At EliteBuild Construction, we take pride in delivering
+                quality construction projects that meet our clients'
+                expectations.
+            </p>
+        </div>
+
+
+        <div class="project-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                    alt="Modern Residential Building"
+                >
+
+                <div class="project-content">
+
+                    <h3>Modern Residential House</h3>
+
+                    <p>
+                        A modern residential building designed with
+                        comfort, style and quality construction.
+                    </p>
+
+                    <span class="project-type">
+                        Residential
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+                    alt="Commercial Building"
+                >
+
+                <div class="project-content">
+
+                    <h3>Commercial Complex</h3>
+
+                    <p>
+                        A professionally constructed commercial property
+                        designed for businesses and modern offices.
+                    </p>
+
+                    <span class="project-type">
+                        Commercial
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80"
+                    alt="Apartment Building"
+                >
+
+                <div class="project-content">
+
+                    <h3>Luxury Apartment</h3>
+
+                    <p>
+                        A high-quality apartment development built with
+                        modern facilities and attractive architecture.
+                    </p>
+
+                    <span class="project-type">
+                        Residential
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 4 -->
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                    alt="Office Building"
+                >
+
+                <div class="project-content">
+
+                    <h3>Modern Office</h3>
+
+                    <p>
+                        A modern office space created to provide a
+                        productive and comfortable working environment.
+                    </p>
+
+                    <span class="project-type">
+                        Commercial
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 5 -->
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+                    alt="Interior Construction"
+                >
+
+                <div class="project-content">
+
+                    <h3>Interior Renovation</h3>
+
+                    <p>
+                        A complete interior renovation focused on
+                        functionality, beauty and modern design.
+                    </p>
+
+                    <span class="project-type">
+                        Renovation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 6 -->
+            <div class="project-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+                    alt="Construction Site"
+                >
+
+                <div class="project-content">
+
+                    <h3>Building Construction</h3>
+
+                    <p>
+                        A complete construction project delivered with
+                        attention to safety, quality and detail.
+                    </p>
+
+                    <span class="project-type">
+                        Construction
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Have a Project in Mind?</h2>
+
+        <p>
+            Let EliteBuild Construction help turn your building idea
+            into reality.
+        </p>
+
+        <a href="services.html">
+            View Our Services
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 EliteBuild Construction. All Rights Reserved.
+        </p>
+
+        <p>
+            Phone: +2348106458549
+        </p>
+
+    </footer>
+
+</body>
+</html>
+

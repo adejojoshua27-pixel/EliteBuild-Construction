@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="assesst/logo 1.png">
+    <title>EliteBuild | Gallery</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #f59e0b;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(
+                rgba(17, 24, 39, 0.8),
+                rgba(17, 24, 39, 0.8)
+            ),
+            url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-content h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-content p {
+            color: #666;
+        }
+
+        /* CTA */
+        .cta {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 60px 8%;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #f59e0b;
+            color: white;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            background-color: #d97706;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1120;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 35px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+
+        <div class="logo">
+            <img src="assesst/logo 1.png" alt="EliteBuild Logo">
+            Elite<span>Build</span>
+        </div>
+
+        <nav>
+            <ul>
+
+                <!-- Existing pages -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="team.html">Team</a></li>
+
+                <!-- Current page -->
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+
+                <!-- Contact page will be created next -->
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Our Gallery</h1>
+
+            <p>
+                Explore some of our construction work and completed projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+
+        <div class="section-title">
+
+            <h2>Our Construction Gallery</h2>
+
+            <p>
+                Take a look at some of the buildings, construction sites,
+                interiors and projects that represent the quality of our work.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <!-- Image 1 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                    alt="Modern house"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Modern Home</h3>
+
+                    <p>
+                        Modern residential construction with a clean
+                        and attractive design.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 2 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+                    alt="Commercial building"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Commercial Building</h3>
+
+                    <p>
+                        A professional commercial building designed
+                        for modern businesses.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 3 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80"
+                    alt="Apartment building"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Apartment Development</h3>
+
+                    <p>
+                        Quality apartment construction with modern
+                        facilities and design.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 4 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80"
+                    alt="Construction workers"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Construction Work</h3>
+
+                    <p>
+                        Our construction team working to deliver
+                        quality projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 5 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                    alt="Modern office"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Modern Office</h3>
+
+                    <p>
+                        A modern office environment designed for
+                        comfort and productivity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 6 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+                    alt="Interior design"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Interior Design</h3>
+
+                    <p>
+                        Beautiful interior finishing completed with
+                        attention to detail.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 7 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+                    alt="Luxury interior"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Luxury Interior</h3>
+
+                    <p>
+                        High-quality interior finishing for a modern
+                        residential space.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 8 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505843795480-5cfb3c03f6ff?auto=format&fit=crop&w=900&q=80"
+                    alt="Building construction"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Building Project</h3>
+
+                    <p>
+                        Another example of our construction and
+                        development work.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image 9 -->
+            <div class="gallery-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80"
+                    alt="Construction project"
+                >
+
+                <div class="gallery-content">
+
+                    <h3>Completed Project</h3>
+
+                    <p>
+                        A completed project showing our commitment
+                        to quality construction.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Have a Construction Project?</h2>
+
+        <p>
+            Let EliteBuild Construction help bring your building
+            idea to life.
+        </p>
+
+        <a href="services.html">
+            Explore Our Services
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 EliteBuild Construction. All Rights Reserved.
+        </p>
+
+        <p>
+            Phone: +2348106458549
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="assesst/logo 1.png">
+    <title>EliteBuild | Our Team</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #111827;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            color: #f59e0b;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #f59e0b;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(
+                rgba(17, 24, 39, 0.8),
+                rgba(17, 24, 39, 0.8)
+            ),
+            url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .team-card {
+            background-color: white;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .team-content {
+            padding: 25px;
+        }
+
+        .team-content h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .team-content h4 {
+            color: #f59e0b;
+            margin-bottom: 12px;
+        }
+
+        .team-content p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* About Team */
+        .team-intro {
+            background-color: white;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .team-intro h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .team-intro p {
+            max-width: 800px;
+            margin: auto;
+            color: #666;
+        }
+
+        /* CTA */
+        .cta {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 60px 8%;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #f59e0b;
+            color: white;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            background-color: #d97706;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b1120;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 35px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+
+        <div class="logo">
+            <img src="assesst/logo 1.png" alt="EliteBuild Logo">
+            Elite<span>Build</span>
+        </div>
+
+        <nav>
+            <ul>
+
+                <!-- Existing pages -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="project.html">Projects</a></li>
+
+                <!-- Current page -->
+                <li><a href="team.html" class="active">Team</a></li>
+
+                <!-- Pages we will create next -->
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>Meet Our Team</h1>
+            <p>
+                Meet the professionals behind EliteBuild Construction.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Team Introduction -->
+    <section class="team-intro">
+
+        <h2>Our Professional Team</h2>
+
+        <p>
+            At EliteBuild Construction, our success is driven by a team
+            of skilled professionals who are committed to quality,
+            safety and customer satisfaction. Every member of our team
+            plays an important role in delivering successful projects.
+        </p>
+
+    </section>
+
+
+    <!-- Team Members -->
+    <section class="team">
+
+        <div class="section-title">
+
+            <h2>Our Experts</h2>
+
+            <p>
+                Meet some of the professionals who help turn our
+                clients' ideas into reality.
+            </p>
+
+        </div>
+
+
+        <div class="team-grid">
+
+            <!-- Team Member 1 -->
+            <div class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+                    alt="Managing Director"
+                >
+
+                <div class="team-content">
+
+                    <h3>David Johnson</h3>
+
+                    <h4>Managing Director</h4>
+
+                    <p>
+                        Leads the company and oversees major construction
+                        projects, business operations and client relations.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                    alt="Project Manager"
+                >
+
+                <div class="team-content">
+
+                    <h3>Sarah Williams</h3>
+
+                    <h4>Project Manager</h4>
+
+                    <p>
+                        Coordinates construction projects and ensures
+                        that every project stays organized and on schedule.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                    alt="Site Engineer"
+                >
+
+                <div class="team-content">
+
+                    <h3>Michael Brown</h3>
+
+                    <h4>Site Engineer</h4>
+
+                    <p>
+                        Oversees construction activities on-site and
+                        ensures that work meets technical requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
+                    alt="Architect"
+                >
+
+                <div class="team-content">
+
+                    <h3>Emily Davis</h3>
+
+                    <h4>Architect</h4>
+
+                    <p>
+                        Develops creative building designs that combine
+                        functionality, beauty and modern architecture.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Team Member 5 -->
+            <div class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
+                    alt="Construction Supervisor"
+                >
+
+                <div class="team-content">
+
+                    <h3>James Wilson</h3>
+
+                    <h4>Construction Supervisor</h4>
+
+                    <p>
+                        Supervises construction workers and ensures that
+                        daily site activities are completed properly.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Team Member 6 -->
+            <div class="team-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+                    alt="Safety Officer"
+                >
+
+                <div class="team-content">
+
+                    <h3>Daniel Smith</h3>
+
+                    <h4>Safety Officer</h4>
+
+                    <p>
+                        Helps maintain a safe working environment and
+                        promotes proper safety practices on every project.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Ready to Start Your Project?</h2>
+
+        <p>
+            Explore our services and discover how EliteBuild
+            Construction can help with your next project.
+        </p>
+
+        <a href="services.html">
+            View Our Services
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 EliteBuild Construction. All Rights Reserved.
+        </p>
+
+        <p>
+            Phone: +2348106458549
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
