@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EliteBuild | Our Services</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background-color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        header {
+            background-color: #111827;
+            color: white;
+            padding: 15px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .logo span span {
+            color: #f59e0b;
+        }
+
+
+        /* =========================
+           NAVIGATION LINKS
+        ========================= */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f59e0b;
+        }
+
+        /* Active page */
+        nav ul li a.active {
+            color: #f59e0b;
+        }
+
+
+        /* =========================
+           PAGE HERO
+        ========================= */
+
+        .page-hero {
+            height: 400px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.65)
+                ),
+                url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .page-hero h1 {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 span {
+            color: #f59e0b;
+        }
+
+        .page-hero p {
+            font-size: 19px;
+        }
+
+
+        /* =========================
+           SERVICES SECTION
+        ========================= */
+
+        .services-section {
+            background-color: white;
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           SERVICE CARDS
+        ========================= */
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #f9fafb;
+            border-radius: 10px;
+            overflow: hidden;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .service-content h3 {
+            color: #111827;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .learn-more {
+            display: inline-block;
+
+            background-color: #f59e0b;
+            color: white;
+
+            padding: 10px 18px;
+            border-radius: 5px;
+
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .learn-more:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           WHY CHOOSE US
+        ========================= */
+
+        .why-us {
+            background-color: #111827;
+            color: white;
+
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .why-us h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .why-us > p {
+            color: #d1d5db;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .why-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 25px;
+
+            background-color: #1f2937;
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            background-color: #374151;
+        }
+
+        .why-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+            color: #f59e0b;
+        }
+
+        .why-card p {
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CALL TO ACTION
+        ========================= */
+
+        .cta {
+            background-color: #f59e0b;
+            color: white;
+
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+
+            background-color: #111827;
+            color: white;
+
+            padding: 13px 25px;
+            border-radius: 5px;
+
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #374151;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #111827;
+            color: white;
+
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .services-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .page-hero h1 {
+                font-size: 40px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .page-hero {
+                height: 350px;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+            }
+
+            .page-hero p {
+                font-size: 16px;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .why-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .why-us h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="assesst/logo 1.png" alt="EliteBuild Logo">
+
+            Elite<span>Build</span>
+
+        </div>
+
+
+        <nav>
+
+            <ul>
+
+                <!-- HOME PAGE LINK -->
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <!-- CURRENT PAGE -->
+                <li>
+                    <a href="services.html" class="active">Services</a>
+                </li>
+
+                <li>
+                    <a href="#">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#">Team</a>
+                </li>
+
+                <li>
+                    <a href="#">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE HERO
+    ========================== -->
+
+    <section class="page-hero">
+
+        <div class="page-hero-content">
+
+            <h1>
+                Our <span>Services</span>
+            </h1>
+
+            <p>
+                Professional construction solutions
+                designed to bring your vision to life.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services-section">
+
+        <div class="section-title">
+
+            <h2>What We Do</h2>
+
+            <p>
+                From construction to renovation,
+                we provide quality services for
+                residential and commercial projects.
+            </p>
+
+        </div>
+
+
+        <div class="services-container">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                    alt="House Construction"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🏠
+                    </div>
+
+                    <h3>
+                        House Construction
+                    </h3>
+
+                    <p>
+                        We build high-quality residential
+                        properties from the foundation
+                        to the final finishing.
+                    </p>
+
+                    <a href="#" class="learn-more">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="service-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80"
+                    alt="Commercial Construction"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🏢
+                    </div>
+
+                    <h3>
+                        Commercial Construction
+                    </h3>
+
+                    <p>
+                        We construct modern offices,
+                        shops and commercial buildings
+                        for businesses.
+                    </p>
+
+                    <a href="#" class="learn-more">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="service-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560185008-b033106af5c3?auto=format&fit=crop&w=800&q=80"
+                    alt="Building Renovation"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🔨
+                    </div>
+
+                    <h3>
+                        Renovation
+                    </h3>
+
+                    <p>
+                        We transform old and outdated
+                        buildings into modern and
+                        comfortable spaces.
+                    </p>
+
+                    <a href="#" class="learn-more">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+                    alt="Interior Design"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🎨
+                    </div>
+
+                    <h3>
+                        Interior Design
+                    </h3>
+
+                    <p>
+                        We create stylish, comfortable
+                        and functional interiors for
+                        homes and businesses.
+                    </p>
+
+                    <a href="#" class="learn-more">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="service-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=800&q=80"
+                    alt="Roofing"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🧱
+                    </div>
+
+                    <h3>
+                        Roofing
+                    </h3>
+
+                    <p>
+                        Professional roof installation,
+                        replacement and maintenance
+                        for residential properties.
+                    </p>
+
+                    <a href="#" class="learn-more">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="service-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80"
+                    alt="Electrical and Plumbing"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Electrical & Plumbing
+                    </h3>
+
+                    <p>
+                        Reliable electrical and plumbing
+                        installation for modern homes
+                        and commercial buildings.
+                    </p>
+
+                    <a href="#" class="learn-more">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY CHOOSE US
+    ========================== -->
+
+    <section class="why-us">
+
+        <h2>
+            Why Choose EliteBuild?
+        </h2>
+
+        <p>
+            We are committed to providing quality
+            construction services while maintaining
+            professionalism, safety and customer satisfaction.
+        </p>
+
+
+        <div class="why-container">
+
+            <div class="why-card">
+
+                <div class="icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Quality
+                </h3>
+
+                <p>
+                    We use quality materials and
+                    professional workmanship on
+                    every project.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    👷
+                </div>
+
+                <h3>
+                    Experienced Team
+                </h3>
+
+                <p>
+                    Our experienced professionals
+                    work together to deliver excellent
+                    results.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    ⏰
+                </div>
+
+                <h3>
+                    On-Time Delivery
+                </h3>
+
+                <p>
+                    We work hard to complete projects
+                    within the agreed timeframe.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div class="icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Customer Focus
+                </h3>
+
+                <p>
+                    Your satisfaction is important to us
+                    from the beginning to the end of
+                    every project.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="cta">
+
+        <h2>
+            Have a Construction Project?
+        </h2>
+
+        <p>
+            Let EliteBuild help turn your ideas
+            into reality.
+        </p>
+
+        <a href="#" class="cta-button">
+            Get a Free Quote
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            <strong>
+                EliteBuild Construction
+            </strong>
+        </p>
+
+        <p>
+            Building quality. Building trust.
+        </p>
+
+        <p>
+            Lagos, Nigeria |
+            +234 XXX XXX XXXX
+        </p>
+
+        <p>
+            © 2026 EliteBuild Construction.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
